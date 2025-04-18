@@ -1,4 +1,10 @@
 export { GET, POST } from 'app/auth';
+console.log("========= ENV CHECK =========");
+Object.keys(process.env).forEach((key) => {
+  const value = process.env[key as keyof NodeJS.ProcessEnv];
+  console.log(`${key}: ${value}`);
+});
+console.log("=============================");
 console.log("===== ENV VARS =====");
 console.log("DATABASE_URL:", process.env.DATABASE_URL);
 console.log("NEXTAUTH_URL:", process.env.NEXTAUTH_URL);
